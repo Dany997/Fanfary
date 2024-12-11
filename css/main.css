@@ -240,6 +240,78 @@ body {
     transform: translateY(0);
   }
 }
+.contact-page {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: linear-gradient(to bottom, #95e9dc, rgba(250, 191, 14, 0.3411764706));
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Wyśrodkowanie w pionie */
+  align-items: center;
+}
+.contact-page__title {
+  font-family: "Anton", sans-serif;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 3rem;
+}
+.contact-page__title span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+.contact-page__title span:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.contact-page__title span:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.contact-page__title span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.contact-page__title span:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.contact-page__icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem; /* Odstęp między ikonami */
+}
+.contact-page__icon {
+  font-size: 50px; /* Ikony zajmują dużą część strony */
+  color: #ff4500;
+  text-decoration: none;
+  opacity: 0; /* Niewidoczne na początku */
+  transform: translateY(20px); /* Przesunięcie na potrzeby animacji */
+  animation: fadeInUp 1s ease forwards;
+}
+.contact-page__icon:hover {
+  transform: scale(1.1); /* Powiększenie przy najechaniu */
+  color: #cc3700;
+}
+.contact-page__icon--facebook {
+  animation-delay: 1s;
+}
+.contact-page__icon--instagram {
+  animation-delay: 1.5s;
+}
+.contact-page__icon--soundcloud {
+  animation-delay: 2s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .footer {
   position: fixed; /* Stopka zawsze na dole */
   bottom: 0; /* Przyklejona do dolnej krawędzi */
