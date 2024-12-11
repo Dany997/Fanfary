@@ -144,7 +144,10 @@ body {
 	}
 
 	&__button {
-		margin-top: 1.5rem;
+		position: relative;
+		top: -20px; /* Przesuń przycisk w górę */
+		margin-top: 0; /* Usuń margin-top, aby uniknąć konfliktów */
+
 		padding: 0.75rem 1.5rem;
 		font-size: 1.25rem;
 		font-weight: bold;
@@ -170,6 +173,20 @@ body {
 	text-align: center;
 	background: linear-gradient(to bottom, $light-cream, $soft-yellow);
 	min-height: 100vh; // Całkowita wysokość strony
+
+	&__subtitle {
+		font-family: 'Anton', sans-serif;
+
+		font-size: 1.5rem;
+		line-height: 1.6;
+		color: $text-color;
+		margin-bottom: 1rem;
+		opacity: 0; // Początkowo ukryty
+		transform: translateY(20px); // Efekt przesunięcia
+		animation: fadeInUp 1s ease forwards; // Animacja
+		animation-delay: 0.1s; // Pojawia się przed tytułem
+		text-align: center;
+	}
 
 	&__title {
 		font-family: 'Anton', sans-serif;
@@ -257,4 +274,15 @@ body {
 		opacity: 1;
 		transform: translateY(0); // Kończy w pozycji wyjściowej
 	}
+}
+
+.footer {
+	position: fixed; /* Stopka zawsze na dole */
+	bottom: 0; /* Przyklejona do dolnej krawędzi */
+	width: 100%; /* Rozciąga się na całą szerokość */
+	color: $text-color; /* Kolor tekstu */
+	text-align: center; /* Wyśrodkowanie tekstu */
+	padding: 0.5rem 0; /* Dodanie przestrzeni pionowej */
+	font-size: 1rem; /* Wielkość tekstu */
+	z-index: 10; /* Zapewnia, że stopka jest nad innymi elementami */
 }

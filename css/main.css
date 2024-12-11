@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -124,7 +125,9 @@ body {
   animation-delay: 2.2s;
 }
 .hero__button {
-  margin-top: 1.5rem;
+  position: relative;
+  top: -20px; /* Przesuń przycisk w górę */
+  margin-top: 0; /* Usuń margin-top, aby uniknąć konfliktów */
   padding: 0.75rem 1.5rem;
   font-size: 1.25rem;
   font-weight: bold;
@@ -148,6 +151,18 @@ body {
   text-align: center;
   background: linear-gradient(to bottom, #95e9dc, rgba(250, 191, 14, 0.3411764706));
   min-height: 100vh;
+}
+.about-page__subtitle {
+  font-family: "Anton", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.1s;
+  text-align: center;
 }
 .about-page__title {
   font-family: "Anton", sans-serif;
@@ -224,4 +239,14 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+.footer {
+  position: fixed; /* Stopka zawsze na dole */
+  bottom: 0; /* Przyklejona do dolnej krawędzi */
+  width: 100%; /* Rozciąga się na całą szerokość */
+  color: #333; /* Kolor tekstu */
+  text-align: center; /* Wyśrodkowanie tekstu */
+  padding: 0.5rem 0; /* Dodanie przestrzeni pionowej */
+  font-size: 1rem; /* Wielkość tekstu */
+  z-index: 10; /* Zapewnia, że stopka jest nad innymi elementami */
 }/*# sourceMappingURL=main.css.map */
