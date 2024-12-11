@@ -1,0 +1,260 @@
+// Kolory
+$light-cream: #95e9dc; // Jasny kremowy
+$soft-yellow: #fabf0e57; // Pastelowy żółty
+
+$text-color: #333; // Neutralny kolor tekstu
+$accent-color: #ff4500; // Akcentowy pomarańczowy
+
+// Gradient w tle strony
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+	background: linear-gradient(to bottom, $light-cream, $soft-yellow);
+	min-height: 100vh; // Gradient obejmuje całą stronę
+	color: $text-color;
+}
+
+// Nawigacja
+.nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-family: 'Anton', sans-serif;
+	padding: 1rem 2rem;
+	position: fixed;
+	top: 0;
+	width: 100%;
+
+	&__logo {
+		display: flex;
+		align-items: center;
+
+		&-circle {
+			width: 40px;
+			height: 40px;
+			background-color: $accent-color;
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 1.5rem;
+			font-weight: bold;
+			color: #fff;
+			margin-right: 0.5rem;
+		}
+
+		&-text {
+			font-size: 2rem;
+			font-weight: bold;
+			color: $text-color;
+		}
+	}
+
+	&__menu {
+		list-style: none;
+		display: flex;
+		gap: 2rem; // Odstęp między elementami
+
+		&-item {
+		} // Możesz dodać specyficzne style dla elementu listy, jeśli potrzebne.
+
+		.nav__link {
+			text-decoration: none;
+			font-size: 1.75rem; // Zwiększamy rozmiar tekstu
+			font-weight: 600;
+			color: $text-color;
+			transition: color 0.3s ease;
+
+			&:hover {
+				color: $accent-color; // Zmiana koloru na hover
+			}
+		}
+	}
+}
+.hero {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	height: 100vh; // Wysokość sekcji hero
+	background: transparent;
+	color: $text-color;
+	&__accent {
+		color: $accent-color;
+	}
+	&__title {
+		font-family: 'Anton', sans-serif;
+		font-size: 3rem;
+		line-height: 1.5;
+		margin-bottom: 2rem;
+
+		span {
+			display: inline-block;
+			opacity: 0; // Na początku niewidoczne
+			transform: translateY(20px); // Efekt "wyskakiwania"
+			animation: fadeInUp 1s ease forwards;
+		}
+
+		span:nth-child(1) {
+			animation-delay: 0.2s;
+		}
+		span:nth-child(2) {
+			animation-delay: 0.4s;
+		}
+		span:nth-child(3) {
+			animation-delay: 0.6s;
+		}
+		span:nth-child(4) {
+			animation-delay: 0.8s;
+		}
+		span:nth-child(5) {
+			animation-delay: 1s;
+		}
+		span:nth-child(6) {
+			animation-delay: 1.2s;
+		}
+		span:nth-child(7) {
+			animation-delay: 1.4s;
+		}
+		span:nth-child(8) {
+			animation-delay: 1.6s;
+		}
+		span:nth-child(9) {
+			animation-delay: 1.8s;
+		}
+	}
+
+	&__image {
+		max-width: 30%; // Ustawiamy maksymalną szerokość
+		height: auto; // Zachowanie proporcji obrazu
+		border-radius: 8px; // Zaokrąglone rogi
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); // Subtelny cień
+		margin-bottom: 4rem; // Odstęp od napisu
+		opacity: 0; // Na początku niewidoczny
+		transform: translateY(20px); // Przesunięcie do animacji
+		animation: fadeInUp 1s ease forwards;
+		animation-delay: 2.2s; // Obrazek pojawia się po napisie
+	}
+
+	&__button {
+		margin-top: 1.5rem;
+		padding: 0.75rem 1.5rem;
+		font-size: 1.25rem;
+		font-weight: bold;
+		background-color: $accent-color;
+		color: #fff;
+		border: none;
+		border-radius: 8px;
+		cursor: pointer;
+		opacity: 0;
+		transform: translateY(20px);
+		animation: fadeInUp 1s ease forwards;
+		animation-delay: 3.4s; // Pojawia się po obrazku
+		transition: background-color 0.3s ease;
+
+		&:hover {
+			background-color: darken($accent-color, 10%);
+		}
+	}
+}
+
+.about-page {
+	padding: 4rem 2rem;
+	text-align: center;
+	background: linear-gradient(to bottom, $light-cream, $soft-yellow);
+	min-height: 100vh; // Całkowita wysokość strony
+
+	&__title {
+		font-family: 'Anton', sans-serif;
+		font-size: 2.5rem;
+		color: $text-color;
+		margin-bottom: 2rem;
+		opacity: 0;
+		animation: fadeIn 1s ease forwards;
+		animation-delay: 0.2s;
+	}
+
+	&__cards {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 2rem;
+	}
+
+	&__card {
+		background-color: #ffffff; // Białe tło
+		border-radius: 10px;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		overflow: hidden;
+		width: 30%; // 30% szerokości ekranu
+		min-width: 300px;
+		max-width: 400px;
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		opacity: 0; // Ukryte na start
+		animation: fadeInUp 1s ease forwards;
+		&:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+		}
+	}
+
+	&__image {
+		width: 100%;
+		height: 300px;
+		object-fit: cover;
+	}
+
+	&__content {
+		padding: 1rem;
+
+		&__name {
+			font-size: 1.5rem;
+			font-weight: bold;
+			margin-bottom: 0.5rem;
+			color: $text-color;
+		}
+
+		&__description {
+			font-size: 1rem;
+			line-height: 1.5;
+			color: $text-color;
+		}
+	}
+
+	// Animacja fadeIn
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	// Opóźnienia animacji dla kart
+	&__card:nth-child(1) {
+		animation-delay: 0.3s;
+	}
+	&__card:nth-child(2) {
+		animation-delay: 0.6s;
+	}
+}
+
+// Kluczowa animacja fadeInUp
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px); // Zaczyna z przesunięciem w dół
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0); // Kończy w pozycji wyjściowej
+	}
+}

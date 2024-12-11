@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(to bottom, #95e9dc, rgba(250, 191, 14, 0.3411764706));
+  min-height: 100vh;
+  color: #333;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Anton", sans-serif;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.nav__logo {
+  display: flex;
+  align-items: center;
+}
+.nav__logo-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #ff4500;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin-right: 0.5rem;
+}
+.nav__logo-text {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+.nav__menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.nav__menu .nav__link {
+  text-decoration: none;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #333;
+  transition: color 0.3s ease;
+}
+.nav__menu .nav__link:hover {
+  color: #ff4500;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  background: transparent;
+  color: #333;
+}
+.hero__accent {
+  color: #ff4500;
+}
+.hero__title {
+  font-family: "Anton", sans-serif;
+  font-size: 3rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+.hero__title span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+.hero__title span:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.hero__title span:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.hero__title span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.hero__title span:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.hero__title span:nth-child(5) {
+  animation-delay: 1s;
+}
+.hero__title span:nth-child(6) {
+  animation-delay: 1.2s;
+}
+.hero__title span:nth-child(7) {
+  animation-delay: 1.4s;
+}
+.hero__title span:nth-child(8) {
+  animation-delay: 1.6s;
+}
+.hero__title span:nth-child(9) {
+  animation-delay: 1.8s;
+}
+.hero__image {
+  max-width: 30%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 2.2s;
+}
+.hero__button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  background-color: #ff4500;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 3.4s;
+  transition: background-color 0.3s ease;
+}
+.hero__button:hover {
+  background-color: #cc3700;
+}
+
+.about-page {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: linear-gradient(to bottom, #95e9dc, rgba(250, 191, 14, 0.3411764706));
+  min-height: 100vh;
+}
+.about-page__title {
+  font-family: "Anton", sans-serif;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.2s;
+}
+.about-page__cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.about-page__card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 30%;
+  min-width: 300px;
+  max-width: 400px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+}
+.about-page__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+.about-page__image {
+  width: 100%;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.about-page__content {
+  padding: 1rem;
+}
+.about-page__content__name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+.about-page__content__description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.about-page__card:nth-child(1) {
+  animation-delay: 0.3s;
+}
+.about-page__card:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}/*# sourceMappingURL=main.css.map */
